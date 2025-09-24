@@ -9,24 +9,17 @@
   2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
 :root {
-  --clr-primary: hsl(246, 80%, 60%);
+  --clr-primary: hsl(172, 67%, 45%);
   --clr-white: #fff;
-  --clr-grey-1: hsl(226, 43%, 10%);
-  --clr-grey-2: hsl(235, 46%, 20%);
-  --clr-grey-3: hsl(235, 45%, 61%);
-  --clr-grey-4: hsl(236, 100%, 87%);
-  --clr-work: hsl(15, 100%, 70%);
-  --clr-play: hsl(195, 74%, 62%);
-  --clr-study: hsl(348, 100%, 68%);
-  --clr-exercise: hsl(145, 58%, 55%);
-  --clr-social: hsl(264, 64%, 52%);
-  --clr-self-care: hsl(43, 84%, 65%);
-  --fs-default: var(--fs-5);
-  --ff-main: "Rubik";
+  --clr-grey-1: hsl(183, 100%, 15%);
+  --clr-grey-2: hsl(186, 14%, 43%);
+  --clr-grey-3: hsl(184, 14%, 56%);
+  --clr-grey-4: hsl(185, 41%, 84%);
+  --clr-grey-5: hsl(189, 47%, 97%);
+  --fs-default: var(--fs-7);
+  --ff-main: "Space Mono";
   --ff-secondary: "Fraunces";
-  --fw-thin: 300;
-  --fw-normal: 400;
-  --fw-bold: 500;
+  --fw-normal: 700;
   --fs-1: 0.625rem;
   --fs-2: 0.75rem;
   --fs-3: 0.875rem;

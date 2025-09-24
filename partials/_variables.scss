@@ -13,29 +13,21 @@
 @use "./utils" as *;
 
 :root {
-  --clr-primary: hsl(246, 80%, 60%);
+  --clr-primary: hsl(172, 67%, 45%);
 
   --clr-white: #fff;
-  --clr-grey-1: hsl(226, 43%, 10%);
-  --clr-grey-2: hsl(235, 46%, 20%);
-  --clr-grey-3: hsl(235, 45%, 61%);
-  --clr-grey-4: hsl(236, 100%, 87%);
+  --clr-grey-1: hsl(183, 100%, 15%);
+  --clr-grey-2: hsl(186, 14%, 43%);
+  --clr-grey-3: hsl(184, 14%, 56%);
+  --clr-grey-4: hsl(185, 41%, 84%);
+  --clr-grey-5: hsl(189, 47%, 97%);
 
-  --clr-work: hsl(15, 100%, 70%);
-  --clr-play: hsl(195, 74%, 62%);
-  --clr-study: hsl(348, 100%, 68%);
-  --clr-exercise: hsl(145, 58%, 55%);
-  --clr-social: hsl(264, 64%, 52%);
-  --clr-self-care: hsl(43, 84%, 65%);
+  --fs-default: var(--fs-7);
 
-  --fs-default: var(--fs-5);
-
-  --ff-main: "Rubik";
+  --ff-main: "Space Mono";
   --ff-secondary: "Fraunces";
 
-  --fw-thin: 300;
-  --fw-normal: 400;
-  --fw-bold: 500;
+  --fw-normal: 700;
 
   // FONT SIZE
   --fs-1: #{toRem(10px)};
@@ -73,8 +65,3 @@
 
   --br-1: #{toRem(20px)};
 }
-
-$bp-desktop: toRem(1200px);
-
-$card-phone-width: toRem(300px);
-$card-desktop-width: toRem(255px);
