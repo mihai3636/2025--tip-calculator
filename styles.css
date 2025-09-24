@@ -1,0 +1,94 @@
+/* Typography Scale */
+/*  
+  10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+/* ******************** */
+/* Spaces */
+/* ******************** */
+/* 
+  2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+:root {
+  --clr-primary: hsl(246, 80%, 60%);
+  --clr-white: #fff;
+  --clr-grey-1: hsl(226, 43%, 10%);
+  --clr-grey-2: hsl(235, 46%, 20%);
+  --clr-grey-3: hsl(235, 45%, 61%);
+  --clr-grey-4: hsl(236, 100%, 87%);
+  --clr-work: hsl(15, 100%, 70%);
+  --clr-play: hsl(195, 74%, 62%);
+  --clr-study: hsl(348, 100%, 68%);
+  --clr-exercise: hsl(145, 58%, 55%);
+  --clr-social: hsl(264, 64%, 52%);
+  --clr-self-care: hsl(43, 84%, 65%);
+  --fs-default: var(--fs-5);
+  --ff-main: "Rubik";
+  --ff-secondary: "Fraunces";
+  --fw-thin: 300;
+  --fw-normal: 400;
+  --fw-bold: 500;
+  --fs-1: 0.625rem;
+  --fs-2: 0.75rem;
+  --fs-3: 0.875rem;
+  --fs-4: 1rem;
+  --fs-5: 1.125rem;
+  --fs-6: 1.25rem;
+  --fs-7: 1.5rem;
+  --fs-8: 1.875rem;
+  --fs-9: 2.25rem;
+  --fs-10: 2.75rem;
+  --fs-11: 3.25rem;
+  --fs-12: 3.875rem;
+  --fs-13: 4.625rem;
+  --fs-14: 5.375rem;
+  --fs-15: 6.125rem;
+  --sp-1: 0.125rem;
+  --sp-2: 0.25rem;
+  --sp-3: 0.5rem;
+  --sp-4: 0.75rem;
+  --sp-5: 1rem;
+  --sp-6: 1.5rem;
+  --sp-7: 2rem;
+  --sp-8: 3rem;
+  --sp-9: 4rem;
+  --sp-10: 5rem;
+  --sp-11: 6rem;
+  --sp-12: 8rem;
+  --container-width-desktop: 90rem;
+  --container-width-mobile: 23.4375rem;
+  --br-1: 1.25rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+td,
+th,
+button {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  font-family: var(--ff-main), sans-serif;
+  font-size: var(--fs-default);
+  font-weight: var(--fw-normal);
+  line-height: 1.5;
+  position: relative;
+}
+
+/*# sourceMappingURL=styles.css.map */

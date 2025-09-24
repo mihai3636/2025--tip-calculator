@@ -1,0 +1,80 @@
+/* Typography Scale */
+/*  
+  10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+/* ******************** */
+/* Spaces */
+/* ******************** */
+/* 
+  2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+@use "./utils" as *;
+
+:root {
+  --clr-primary: hsl(246, 80%, 60%);
+
+  --clr-white: #fff;
+  --clr-grey-1: hsl(226, 43%, 10%);
+  --clr-grey-2: hsl(235, 46%, 20%);
+  --clr-grey-3: hsl(235, 45%, 61%);
+  --clr-grey-4: hsl(236, 100%, 87%);
+
+  --clr-work: hsl(15, 100%, 70%);
+  --clr-play: hsl(195, 74%, 62%);
+  --clr-study: hsl(348, 100%, 68%);
+  --clr-exercise: hsl(145, 58%, 55%);
+  --clr-social: hsl(264, 64%, 52%);
+  --clr-self-care: hsl(43, 84%, 65%);
+
+  --fs-default: var(--fs-5);
+
+  --ff-main: "Rubik";
+  --ff-secondary: "Fraunces";
+
+  --fw-thin: 300;
+  --fw-normal: 400;
+  --fw-bold: 500;
+
+  // FONT SIZE
+  --fs-1: #{toRem(10px)};
+  --fs-2: #{toRem(12px)};
+  --fs-3: #{toRem(14px)};
+  --fs-4: #{toRem(16px)};
+  --fs-5: #{toRem(18px)};
+  --fs-6: #{toRem(20px)};
+  --fs-7: #{toRem(24px)};
+  --fs-8: #{toRem(30px)};
+  --fs-9: #{toRem(36px)};
+  --fs-10: #{toRem(44px)};
+  --fs-11: #{toRem(52px)};
+  --fs-12: #{toRem(62px)};
+  --fs-13: #{toRem(74px)};
+  --fs-14: #{toRem(86px)};
+  --fs-15: #{toRem(98px)};
+
+  // SPACING
+  --sp-1: #{toRem(2px)};
+  --sp-2: #{toRem(4px)};
+  --sp-3: #{toRem(8px)};
+  --sp-4: #{toRem(12px)};
+  --sp-5: #{toRem(16px)};
+  --sp-6: #{toRem(24px)};
+  --sp-7: #{toRem(32px)};
+  --sp-8: #{toRem(48px)};
+  --sp-9: #{toRem(64px)};
+  --sp-10: #{toRem(80px)};
+  --sp-11: #{toRem(96px)};
+  --sp-12: #{toRem(128px)};
+
+  --container-width-desktop: #{toRem(1440px)};
+  --container-width-mobile: #{toRem(375px)};
+
+  --br-1: #{toRem(20px)};
+}
+
+$bp-desktop: toRem(1200px);
+
+$card-phone-width: toRem(300px);
+$card-desktop-width: toRem(255px);
