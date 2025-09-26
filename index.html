@@ -88,16 +88,26 @@
             </div>
           </fieldset>
 
-          <fieldset class="control-people">
-            <label class="control-label" for="inputPeople"
-              >Number of People</label
-            >
-            <input
-              id="inputPeople"
-              type="text"
-              placeholder="5"
-              class="text-input text-input--people"
-            />
+          <fieldset id="peopleFieldset" class="control-people invali">
+            <div class="control-label-container">
+              <label class="control-label" for="inputPeople"
+                >Number of People</label
+              >
+              <span id="invalidPeopleNo">Can't be zero </span>
+            </div>
+            <div class="input-wrapper">
+              <img
+                class="input-icon"
+                src="./images/icon-person.svg"
+                alt="Person icon"
+              />
+              <input
+                id="inputPeople"
+                type="text"
+                placeholder="5"
+                class="text-input text-input--people"
+              />
+            </div>
           </fieldset>
         </article>
 
