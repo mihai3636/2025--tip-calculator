@@ -10,6 +10,37 @@ body {
   position: relative;
 }
 
+.container {
+  min-height: 100svh;
+  background-color: var(--clr-grey-4);
+
+  @media (min-width: $bp-desktop) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--sp-9);
+  }
+}
+
+.title {
+  font-size: var(--fs-8);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  color: var(--clr-grey-2);
+
+  padding-block: var(--sp-7);
+  @media (min-width: $bp-desktop) {
+    padding: 0;
+  }
+}
+
 input[type="radio"] {
-  // display: none;
+  display: none;
+}
+
+*:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--clr-primary);
 }

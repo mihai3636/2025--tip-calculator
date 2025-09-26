@@ -12,6 +12,10 @@
 
 @use "./utils" as *;
 
+$bp-tablet: toRem(690px);
+$bp-desktop: toRem(800px);
+// $bp-desktop-2: toRem(920px);
+
 :root {
   --clr-primary: hsl(172, 67%, 45%);
 
@@ -23,6 +27,10 @@
   --clr-grey-5: hsl(189, 47%, 97%);
 
   --fs-default: var(--fs-7);
+
+  @media (min-width: $bp-desktop) {
+    --fs-default: var(--fs-6);
+  }
 
   --ff-main: "Space Mono";
   --ff-secondary: "Fraunces";
@@ -63,5 +71,7 @@
   --container-width-desktop: #{toRem(1440px)};
   --container-width-mobile: #{toRem(375px)};
 
-  --br-1: #{toRem(20px)};
+  --br-1: #{toRem(10px)};
+
+  --desktop-calc-max-width: #{toRem(920px)};
 }

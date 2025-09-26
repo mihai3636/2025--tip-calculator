@@ -34,47 +34,73 @@
       <main class="calculator">
         <article class="controls">
           <fieldset class="control-bill">
-            <label for="bill" class="label-bill">Bill</label>
-            <input id="bill" type="text" class="bill" />
+            <label class="control-label" for="bill" class="label-bill"
+              >Bill</label
+            >
+            <div class="input-wrapper">
+              <img
+                class="input-icon icon--bill"
+                src="./images/icon-dollar.svg"
+                alt="Dollar icon"
+              />
+              <input
+                id="bill"
+                class="text-input text-input--bill"
+                type="text"
+                placeholder="0"
+              />
+            </div>
           </fieldset>
 
           <fieldset class="control-tip">
-            <legend>Select Tip %</legend>
-            <label class="tip-radio">
-              <input type="radio" value="5" name="tip" />
-              <span>5%</span>
-            </label>
-            <label class="tip-radio">
-              <input type="radio" value="10" name="tip" />
-              <span>10%</span>
-            </label>
-            <label class="tip-radio">
-              <input type="radio" value="15" name="tip" />
-              <span>15%</span>
-            </label>
-            <label class="tip-radio">
-              <input type="radio" value="25" name="tip" />
-              <span>25%</span>
-            </label>
-            <label class="tip-radio">
-              <input type="radio" value="50" name="tip" />
-              <span>50%</span>
-            </label>
-            <label class="tip-radio">
-              <input type="radio" value="custom" name="tip" />
-              <input id="inputCustomTip" type="text" placeholder="Custom" />
-            </label>
+            <label class="control-label">Select Tip %</label>
+
+            <div class="control-tip-body">
+              <label class="tip-radio">
+                <input type="radio" value="5" name="tip" />
+                <span tabindex="0">5%</span>
+              </label>
+              <label class="tip-radio">
+                <input type="radio" value="10" name="tip" />
+                <span tabindex="0">10%</span>
+              </label>
+              <label class="tip-radio">
+                <input type="radio" value="15" name="tip" />
+                <span tabindex="0">15%</span>
+              </label>
+              <label class="tip-radio">
+                <input type="radio" value="25" name="tip" />
+                <span tabindex="0">25%</span>
+              </label>
+              <label class="tip-radio">
+                <input type="radio" value="50" name="tip" />
+                <span tabindex="0">50%</span>
+              </label>
+              <label class="tip-radio-custom">
+                <input type="radio" value="custom" name="tip" />
+                <input
+                  id="inputCustomTip"
+                  class="text-input text-input--custom"
+                  type="text"
+                  placeholder="Custom"
+                />
+              </label>
+            </div>
           </fieldset>
 
-          <fieldset>
-            <label for="inputPeople">Number of People</label>
-            <input id="inputPeople" type="text" placeholder="5" />
+          <fieldset class="control-people">
+            <label class="control-label" for="inputPeople"
+              >Number of People</label
+            >
+            <input
+              id="inputPeople"
+              type="text"
+              placeholder="5"
+              class="text-input text-input--people"
+            />
           </fieldset>
         </article>
 
-        <!-- TODO: make this a grid?? Wondering how to create that gap on desktop
-          (the spacing between the reset button and texts) 
-        -->
         <aside class="results">
           <div class="result-text">
             <h2 class="result-title">Tip Amount</h2>
@@ -83,7 +109,7 @@
           <p id="tipValue" class="result-value">$<span>4.27</span></p>
 
           <div class="result-text">
-            <h2 class="result-title">Tip Amount</h2>
+            <h2 class="result-title">Total</h2>
             <p class="result-subtitle">/ person</p>
           </div>
           <p id="totalValue" class="result-value">$<span>32.79</span></p>

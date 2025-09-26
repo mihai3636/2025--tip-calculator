@@ -21,3 +21,23 @@ img {
   max-width: 100%;
   display: block;
 }
+
+input,
+button,
+textarea,
+select {
+  // margin: 0;
+  font: inherit; // inherit font from body
+  // line-height: normal;
+  background: none;
+  border: none;
+
+  // -webkit-appearance: none; // removes Safari inner styles
+  // -moz-appearance: none; // removes Firefox inner styles
+  // appearance: none; // standard
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
