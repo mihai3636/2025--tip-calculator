@@ -277,6 +277,7 @@ input[type=text]:hover {
 }
 .control-people span {
   opacity: 0;
+  font-size: var(--fs-5);
 }
 
 .invalid input {
@@ -285,7 +286,6 @@ input[type=text]:hover {
 .invalid span {
   opacity: 1;
   color: orangered;
-  font-size: var(--fs-5);
 }
 
 .results {

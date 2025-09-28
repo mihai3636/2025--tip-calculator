@@ -1,7 +1,231 @@
 console.log("Hello world!");
 
-const customInputEl = document.getElementById("inputCustomTip");
+const tipValueEl = document.getElementById("tipValue").querySelector("span");
+const totalValueEl = document
+  .getElementById("totalValue")
+  .querySelector("span");
 
-customInputEl.addEventListener("click", () => {
-  document.querySelector('input[value="custom"]').checked = true;
+const inputCustomEl = document.getElementById("inputCustom");
+const inputBillEl = document.getElementById("inputBill");
+const inputPeopleEl = document.getElementById("inputPeople");
+const btnResetEl = document.getElementById("btnReset");
+
+const tipRadiosEls = document.querySelectorAll('input[type="radio"]');
+
+let selectedTip = 5;
+let customTipChecked = false;
+
+let inputBillValue = 0;
+let inputPeopleValue = 1;
+
+let tipPerPerson = 4.27;
+let totalPerPerson = 32.79;
+
+const DEFAULT_RADIO_TIP = selectedTip.toString();
+
+function onRadioClick() {
+  computeResults();
+}
+
+tipRadiosEls.forEach((radio) => {
+  radio.addEventListener("click", onRadioClick);
 });
+
+inputCustomEl.addEventListener("click", () => {
+  document.querySelector('input[value="custom"]').checked = true;
+  selectedTip = "custom";
+});
+
+inputBillEl.addEventListener("input", (e) => {
+  inputBillEl.value = filterTextToOnePointDecimal(inputBillEl.value);
+
+  computeResults();
+});
+
+inputPeopleEl.addEventListener("input", (e) => {
+  inputPeopleEl.value = filterTextToInteger(inputPeopleEl.value);
+
+  computeResults();
+});
+
+inputCustomEl.addEventListener("input", (e) => {
+  inputCustomEl.value = filterTextToInteger(inputCustomEl.value);
+
+  computeResults();
+});
+
+btnResetEl.addEventListener("click", (e) => {
+  tipPerPerson = 0;
+  totalPerPerson = 0;
+
+  selectedTip = 5;
+  customTipChecked = false;
+
+  inputBillValue = 0;
+  inputPeopleValue = 1;
+
+  updateUi();
+  hideError();
+});
+
+function filterTextToOnePointDecimal(value) {
+  value = value.replace(/[^\d.]/g, "");
+
+  if (value.startsWith(".")) {
+    value = "0" + value;
+  }
+
+  const parts = value.split(".");
+  if (parts.length > 2) {
+    value = parts[0] + "." + parts.slice(1).join("");
+  }
+
+  if (value.startsWith("00")) {
+    value = value.substring(1);
+  }
+
+  if (
+    value.startsWith("0") &&
+    value.length > 1 &&
+    ![".", ","].includes(value[1])
+  ) {
+    value = value.substring(1);
+  }
+
+  return value;
+}
+
+function filterTextToInteger(value) {
+  value = value.replace(/[^\d]/g, "");
+
+  if (value.startsWith("0") && value.length > 1) {
+    value = value.substring(1);
+  }
+
+  return value;
+}
+
+function updateUi() {
+  tipValueEl.textContent = tipPerPerson.toFixed(2);
+  totalValueEl.textContent = totalPerPerson.toFixed(2);
+
+  updateBillUi();
+  updatePeopleUi();
+  updateSelectedTipUi();
+}
+
+function updateBillUi() {
+  let uiValue = "";
+  if (inputBillValue !== 0) {
+    uiValue = inputBillValue.toString();
+  }
+
+  inputBillEl.value = uiValue;
+}
+
+function updatePeopleUi() {
+  let uiValue = "";
+  if (inputPeopleValue !== 0) {
+    uiValue = inputPeopleValue.toString();
+  }
+
+  inputPeopleEl.value = uiValue;
+}
+
+function updateCustomTipUi() {
+  if (!customTipChecked) {
+    inputCustomEl.value = "";
+    return;
+  }
+
+  let uiValue = selectedTip.toString();
+  // if (uiValue === "0") {
+  //   uiValue = "";
+  // }
+
+  inputCustomEl.value = uiValue;
+}
+
+function updateSelectedTipUi() {
+  let radioEl;
+  radioEl = Array.from(tipRadiosEls).find(
+    (radio) => radio.value === selectedTip.toString()
+  );
+
+  if (customTipChecked) {
+    radioEl = Array.from(tipRadiosEls).find(
+      (radio) => radio.value === "custom"
+    );
+  }
+
+  radioEl.checked = true;
+  updateCustomTipUi();
+}
+
+function getSelectedTipValue() {
+  let radioEl = Array.from(tipRadiosEls).find((radio) => {
+    return radio.checked === true;
+  });
+
+  if (radioEl.value === "custom") {
+    selectedTip = Number(inputCustomEl.value);
+    customTipChecked = true;
+    console.log(
+      `Selected tip is: ${selectedTip} and customTipChecked: ${customTipChecked}`
+    );
+    return;
+  }
+
+  selectedTip = Number(radioEl.value);
+  customTipChecked = false;
+  console.log(
+    `Selected tip is: ${selectedTip} and customTipChecked: ${customTipChecked}`
+  );
+}
+
+function getBillValue() {
+  inputBillValue = Number(inputBillEl.value);
+  console.log(`Bill value is: ${inputBillValue}`);
+}
+
+function getPeopleValue() {
+  inputPeopleValue = Number(inputPeopleEl.value);
+  console.log(`People value is: ${inputPeopleValue}`);
+}
+
+function computeResults() {
+  getBillValue();
+  getPeopleValue();
+  getSelectedTipValue();
+
+  if (!isValid()) {
+    return;
+  }
+
+  let tip = (selectedTip / 100) * inputBillValue;
+  tipPerPerson = tip / inputPeopleValue;
+
+  totalPerPerson = inputBillValue / inputPeopleValue + tipPerPerson;
+
+  updateUi();
+}
+
+function isValid() {
+  if (inputPeopleValue > 0) {
+    hideError();
+    return true;
+  }
+
+  showError();
+  return false;
+}
+
+function showError() {
+  document.getElementById("peopleFieldset").classList.add("invalid");
+}
+
+function hideError() {
+  document.getElementById("peopleFieldset").classList.remove("invalid");
+}
+
+updateUi();

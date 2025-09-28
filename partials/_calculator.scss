@@ -150,6 +150,7 @@ input[type="text"] {
 
   span {
     opacity: 0;
+    font-size: var(--fs-5);
   }
 }
 
@@ -161,7 +162,6 @@ input[type="text"] {
   span {
     opacity: 1;
     color: orangered;
-    font-size: var(--fs-5);
   }
 }
 
