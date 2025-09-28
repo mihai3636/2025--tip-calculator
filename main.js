@@ -21,50 +21,55 @@ let totalPerPerson = 32.79;
 
 const DEFAULT_RADIO_TIP = selectedTip.toString();
 
+initListeners();
+updateUi();
+
 function onRadioClick() {
   computeResults();
 }
 
-tipRadiosEls.forEach((radio) => {
-  radio.addEventListener("click", onRadioClick);
-});
+function initListeners() {
+  tipRadiosEls.forEach((radio) => {
+    radio.addEventListener("click", onRadioClick);
+  });
 
-inputCustomEl.addEventListener("click", () => {
-  document.querySelector('input[value="custom"]').checked = true;
-  selectedTip = "custom";
-});
+  inputCustomEl.addEventListener("click", () => {
+    document.querySelector('input[value="custom"]').checked = true;
+    selectedTip = "custom";
+  });
 
-inputBillEl.addEventListener("input", (e) => {
-  inputBillEl.value = filterTextToOnePointDecimal(inputBillEl.value);
+  inputBillEl.addEventListener("input", (e) => {
+    inputBillEl.value = filterTextToOnePointDecimal(inputBillEl.value);
 
-  computeResults();
-});
+    computeResults();
+  });
 
-inputPeopleEl.addEventListener("input", (e) => {
-  inputPeopleEl.value = filterTextToInteger(inputPeopleEl.value);
+  inputPeopleEl.addEventListener("input", (e) => {
+    inputPeopleEl.value = filterTextToInteger(inputPeopleEl.value);
 
-  computeResults();
-});
+    computeResults();
+  });
 
-inputCustomEl.addEventListener("input", (e) => {
-  inputCustomEl.value = filterTextToInteger(inputCustomEl.value);
+  inputCustomEl.addEventListener("input", (e) => {
+    inputCustomEl.value = filterTextToInteger(inputCustomEl.value);
 
-  computeResults();
-});
+    computeResults();
+  });
 
-btnResetEl.addEventListener("click", (e) => {
-  tipPerPerson = 0;
-  totalPerPerson = 0;
+  btnResetEl.addEventListener("click", (e) => {
+    tipPerPerson = 0;
+    totalPerPerson = 0;
 
-  selectedTip = 5;
-  customTipChecked = false;
+    selectedTip = 5;
+    customTipChecked = false;
 
-  inputBillValue = 0;
-  inputPeopleValue = 1;
+    inputBillValue = 0;
+    inputPeopleValue = 1;
 
-  updateUi();
-  hideError();
-});
+    updateUi();
+    hideError();
+  });
+}
 
 function filterTextToOnePointDecimal(value) {
   value = value.replace(/[^\d.]/g, "");
@@ -135,11 +140,7 @@ function updateCustomTipUi() {
     inputCustomEl.value = "";
     return;
   }
-
   let uiValue = selectedTip.toString();
-  // if (uiValue === "0") {
-  //   uiValue = "";
-  // }
 
   inputCustomEl.value = uiValue;
 }
@@ -217,5 +218,3 @@ function showError() {
 function hideError() {
   document.getElementById("peopleFieldset").classList.remove("invalid");
 }
-
-updateUi();
