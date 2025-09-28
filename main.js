@@ -1,5 +1,3 @@
-console.log("Hello world!");
-
 const tipValueEl = document.getElementById("tipValue").querySelector("span");
 const totalValueEl = document
   .getElementById("totalValue")
@@ -170,27 +168,19 @@ function getSelectedTipValue() {
   if (radioEl.value === "custom") {
     selectedTip = Number(inputCustomEl.value);
     customTipChecked = true;
-    console.log(
-      `Selected tip is: ${selectedTip} and customTipChecked: ${customTipChecked}`
-    );
     return;
   }
 
   selectedTip = Number(radioEl.value);
   customTipChecked = false;
-  console.log(
-    `Selected tip is: ${selectedTip} and customTipChecked: ${customTipChecked}`
-  );
 }
 
 function getBillValue() {
   inputBillValue = Number(inputBillEl.value);
-  console.log(`Bill value is: ${inputBillValue}`);
 }
 
 function getPeopleValue() {
   inputPeopleValue = Number(inputPeopleEl.value);
-  console.log(`People value is: ${inputPeopleValue}`);
 }
 
 function computeResults() {
